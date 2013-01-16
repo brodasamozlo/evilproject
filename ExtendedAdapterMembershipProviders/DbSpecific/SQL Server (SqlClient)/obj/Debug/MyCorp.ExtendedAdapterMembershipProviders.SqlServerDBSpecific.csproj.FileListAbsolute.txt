@@ -1,1 +1,0 @@
-C:\Projekty VS\EvilProject\ExtendedAdapterMembershipProviders\DbSpecific\SQL Server (SqlClient)\obj\Debug\MyCorp.ExtendedAdapterMembershipProviders.SqlServerDBSpecific.csprojResolveAssemblyReference.cache
