@@ -1,0 +1,4 @@
+# git ignore file
+/bin
+/obj
+C:\Projekty VS\EvilProject\EvilProject\Properties\PublishProfiles\evilproject.pl - Web Deploy.pubxml
