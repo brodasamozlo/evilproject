@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40514423f56b4baa9bfb1ca56f5e4746" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="EvilProjectModel.PageNews" Width="1.5" PointX="3.25" PointY="1.125" />
+        <EntityTypeShape EntityType="EvilProjectModel.sysdiagram" Width="1.5" PointX="5.1190908575053751" PointY="6.1116141407338969" />
+        <EntityTypeShape EntityType="EvilProjectModel.TODO" Width="1.5" PointX="0.5" PointY="1.25" />
+        <EntityTypeShape EntityType="EvilProjectModel.User" Width="1.5" PointX="8.75" PointY="3.625" />
+        <EntityTypeShape EntityType="EvilProjectModel.webpages_Membership" Width="1.5" PointX="6" PointY="4.25" />
+        <EntityTypeShape EntityType="EvilProjectModel.webpages_Roles" Width="1.5" PointX="9" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

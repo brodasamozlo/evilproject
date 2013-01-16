@@ -1,0 +1,80 @@
+﻿@{
+   
+    <ul>
+	    <li>
+		    <h2><a href="http://www.ogrzewanie.evilproject.pl" target="_blank">Ogrzewanie</a></h2>
+		    <ul>
+			    <p>Mały projekcik do liczenia ilości zużytego  opału wykonany w PHP-4 z użyciem CodeIgniter</p>
+		    </ul>
+            <h2><a href="http://www.budzet.evilproject.pl" target="_blank">Domowy Budżet</a></h2>
+		    <ul>
+			    <p>Aplikacja webowa do zarządzania domowym budżetem. Wykonana w PHP-5 na Zend Framework 2.</p>	
+		    </ul>
+	    </li>
+				
+    </ul>
+    
+    
+    System.Collections.Hashtable ToDo = ViewData["lista_todo_do_zrobienia"] as System.Collections.Hashtable;
+
+    if (ToDo != null)
+    {
+       <ul>
+		 <li>
+             <h2>TODO - Wykonane</h2>
+                <ul>
+            @foreach (string projekt in ToDo.Keys)
+            {
+                foreach (EvilProject.Models.TODO zadanie in (System.Collections.ArrayList)ToDo[projekt])
+                { 
+                    <li>@String.Format("{0} - {1}", zadanie.project_name, zadanie.description)</li>	
+                }
+            }   
+            </ul> 
+         </li>
+       </ul>
+           
+    }
+    else 
+    {
+        <ul>
+			<li>
+                <h2>TODO  - NIC</h2>
+			    <ul>
+                    <li>Wakacje ???? :)</li>	
+			    </ul>
+            </li>
+        </ul>
+        }
+    }
+
+
+<!--
+<ul>
+				<li>
+				    <h2>TODO  - EvilProject</h2>
+					    <ul>
+                        <li>Logowanie i autoryzacja</li>	
+                        <li>Dynamiczne menu - w zależności od urprawnień (nie)zalogowanego usera, zrobić 'rozwijane' posty (a'la "Read More...")</li>
+                        <li>Dodać mechanizm do zarządzania dynamiczną częścią - posty i TODO</li>
+                        <li>Uzupełnić podstronę O mnie</li>
+                        <li>Dodać formularz kontaktowy na podstronie Kontakt</li>
+				    </ul>
+				    <h2>TODO - Ogrzewanie</h2>
+					    <ul>
+                            <li>Dodać możliwość rejestracji dostaw węgla</li>
+                            <li>Obliczać ile węgla zostało</li>
+                            <li>Estymować na ile miesięcy starczy jeszcze węgla</li>
+				        </ul>
+                    <h2>TODO - Budżet Domowy</h2>
+					    <ul>
+                            <li>Zaprojektować bazę danych - baza w wersji 0.2 już jest, ale pewnie będzie modyfikowana w trakcie dalszego tworzenia projektu</li>
+                            <li>Rejestracja z potwierdzeniem adresu email, logowanie, zarządzanie użytkownikami/rolami</li>
+                            <li>Dodać możliwość wprowadzania/edycji danych - Dodanie modeli, widoków i kontrolerów do wszystkich pozostałych tablic</li>
+                            <li>Sedno - statystyki, wykresy, prognozy - znaczy sie miodek :D</li>
+                            <li>Zrobić formularz kontaktowy</li>
+				        </ul>
+				</li>
+			</ul>
+
+-->

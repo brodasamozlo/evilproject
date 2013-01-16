@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EvilProjectModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EvilProjectEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="PageNews" EntityType="EvilProjectModel.PageNews" />
+  </EntityContainer>
+  <EntityType Name="PageNews">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="body" Nullable="false" />
+    <Property Type="DateTime" Name="publish_date" Nullable="false" />
+    <Property Type="String" Name="type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="project_title" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvilProject", "EvilProject\EvilProject.csproj", "{7BACFB22-55AE-475A-B3C4-8A007F843877}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvilProject.Tests", "EvilProject.Tests\EvilProject.Tests.csproj", "{5C763E61-823A-459F-9724-4A3E6E6CDB55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BACFB22-55AE-475A-B3C4-8A007F843877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BACFB22-55AE-475A-B3C4-8A007F843877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BACFB22-55AE-475A-B3C4-8A007F843877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BACFB22-55AE-475A-B3C4-8A007F843877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C763E61-823A-459F-9724-4A3E6E6CDB55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C763E61-823A-459F-9724-4A3E6E6CDB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C763E61-823A-459F-9724-4A3E6E6CDB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C763E61-823A-459F-9724-4A3E6E6CDB55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

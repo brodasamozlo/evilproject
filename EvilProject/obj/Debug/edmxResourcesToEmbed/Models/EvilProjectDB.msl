@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EvilProjectModelStoreContainer" CdmEntityContainer="EvilProjectEntities">
+    <EntitySetMapping Name="PageNews">
+      <EntityTypeMapping TypeName="IsTypeOf(EvilProjectModel.PageNews)">
+        <MappingFragment StoreEntitySet="PageNews">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="project_title" ColumnName="project_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

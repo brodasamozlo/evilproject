@@ -1,0 +1,83 @@
+﻿    
+@{
+    ViewBag.Title = "Główna";
+}
+
+@{
+    
+    var Model = ViewData["News"] as IEnumerable<EvilProject.Models.PageNews>;
+    foreach (var item in Model) {
+        <div class="post">
+	    <h1 class="title"><a href="#"> @Html.DisplayTextFor(modelItem => item.title)</a></h1>
+	    <p class="byline"><small>  @String.Format("{0}", item.publish_date).Substring(0,16) <a href="#">Broda Samo Zło</a></small></p>
+	    <div class="entry">
+                @if(Request.IsAuthenticated) 
+                {<p>   
+                    @Html.ActionLink("Edit", "Edit", "PageNews", new { item.id }, new { @class = "editlinksmall" })
+                    @Html.ActionLink("Delete", "Delete", "PageNews", new { item.id }, new { @class = "deletelinksmall" })
+                 </p>
+                }
+		        <p>
+                     @Html.DisplayTextFor(modelItem => item.body)
+
+		        </p>
+	        </div>
+        </div>
+    
+    }
+
+    
+    
+      if(Request.IsAuthenticated) 
+        {<p>   
+            @Html.ActionLink("Create", "Create", "PageNews",null,  new { @class = "addlinksmall" })
+         </p>
+        }
+    
+}
+
+<!--<a href="~/Views/Home/Index.cshtml">~/Views/Home/Index.cshtml</a>
+<div class="post">
+	<h1 class="title"><a href="#">Witam na mojej stronie!</a></h1>
+	<p class="byline"><small>2013-01-11 <a href="#">Broda Samo Zło</a></small></p>
+	<div class="entry">
+		<p>
+            Ta strona, jak i strony zrobione w PHP (patrz z lewej) powstały jako projekty badawczo - rozwojowe. Główny cel dla mnie to nauczyć się, poprzez praktykę, wzorca projektowego MVC, zarówno w środowisku ASP jak i PHP.<br>
+            Ta strona powstaje z wykorzystaniem tylko i wyłącznie technologii dostarczonych przez <strong>M</strong>icro<strong>S</strong>oft -  ASP.NET MVC4, kod pisany jest w C# w  środowisku MS Visual Studio 2012 Express, baza danych MS SQL Express.<br>
+            Strony PHP-owe pisane są w PHP(taa wiem że to dziwne ;)), w środowisku Eclipse(Juno) i wykorzystaniem baz w MySQL. Upraszczając, na tej stronie 'ćwiczę' MS-a, na projektach z lewej PHP-a.
+            <br >
+            Świadomie całkowicie pomijam jako cel nauki (chociaż też pewnie przy okazji trochę się nauczę) HTML/CSS - jestem tzw. totalnym bezguściem artystycznym.. 
+            tego nie zmienię, to jedna z rzeczy których człowiek nie jest w stanie się nauczyć... albo <strong>'TO'</strong> masz albo nie... chociaż od strony czysto 'technicznej' HTML i CSS są proste jak
+            kontrtukcja gwoździa...<br>
+            Czym będzie TA strona? Jeszcze nie wiem... może będę tu wpisywał swoje przejścia, czy generalnie problemy/trudności jakie miałem przy tworzeniu poszczególnych rozwiązań.. zobaczymy...<br >
+            Postaram się każdą rzecz z TODO, po wykonaniu, krótko(albo i długo, jak będzie wena) opisać w poście. Jakie były trudności, strony na których szukałem pomocy itd, itp..<br>
+            TODO będzie zwierało mój plan na najbliższe dni, będzie tu info nie tylko o rzeczach które chcę wykonać dla tej strony ale także dla info dla stron PHP-owych.
+		</p>
+	</div>
+</div>
+
+
+<div class="post">
+	<h1 class="title"><a href="#">Hosting</a></h1>
+	<p class="byline"><small>2013-01-11 <a href="#">Broda Samo Zło</a></small></p>
+	<div class="entry">
+		<p>
+            Ta strona to moja pierwsza w życiu zarejestrowana domena :D. <br>
+            Wszysto co widać jesto hostowane jest na serwerach <a href="http://www.webio.pl" target='blank'>Webio</a>, to mój pierwszy kontakt z jakim kolwiek dostwcą usług hostingowych, oferują hosting PHP i ASP za naprawdę rozsądną cenę (130zł/rok w momencie pisania tego posta). 
+            Muszę przyznać, że jestem mile zaskoczony prostotą całego przedsięwzięcia. Zarejestruj konto -> Dodaj domenę (może być jako ich poddomena) -> Włącz zdalną publikację -> Opublikuj stronę. Szybko , łatwo i przyjemnie :D
+		</p>
+	</div>
+</div>
+
+
+
+<div class="post">
+	<h1 class="title"><a href="#">....</a></h1>
+	<p class="byline"><small>2013-01-14 <a href="#">Broda Samo Zło</a></small></p>
+	<div class="entry">
+		<p>
+            Priorytet to zrobić na tej stronce logowanie i dodawanie treści.. zwłaszcza dla panelu z prawej strony...
+		</p>
+	</div>
+</div>
+-->

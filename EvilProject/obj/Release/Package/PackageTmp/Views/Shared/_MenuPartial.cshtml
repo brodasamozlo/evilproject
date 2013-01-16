@@ -1,0 +1,9 @@
+﻿
+<li class="@String.Format("{0}", ViewBag.Title == "Główna" ? "current_page_item":"")">@Html.ActionLink("Główna", "Index", "Home")</li>
+<li class="@String.Format("{0}", ViewBag.Title == "O mnie" ? "current_page_item":"")">@Html.ActionLink("O mnie", "About", "Home")</li>
+<li class="@String.Format("{0}", ViewBag.Title == "Kontakt" ? "current_page_item":"")">@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+@if (Request.IsAuthenticated){
+<li class="@String.Format("{0}", ViewBag.Title == "News" ? "current_page_item":"")">@Html.ActionLink("News", "Index", "PageNews")</li>
+<li class="@String.Format("{0}", ViewBag.Title == "TODO" ? "current_page_item":"")">@Html.ActionLink("TODO", "Index", "TODO")</li>
+}
+ 
