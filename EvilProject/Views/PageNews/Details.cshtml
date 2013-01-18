@@ -4,33 +4,21 @@
     ViewBag.Title = "Szczeguły";
 }
 
-<h2>Details</h2>
 
-<fieldset>
-    <legend>PageNews</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.title)
+    <div class="post">
+	<h1 class="title"><a href="#"> @Html.DisplayTextFor(model => model.title)</a></h1>
+	<p class="byline"><small>  @String.Format("{0}", Model.publish_date.ToString("yyyy-MM-dd HH:mm")) <a href="#">Broda Samo Zło</a></small></p>
+	<div class="entry">
+            @if(Request.IsAuthenticated) 
+            {<p>   
+                @Html.ActionLink("Edit", "Edit", "PageNews", new {  @Model.title }, new { @class = "editlinksmall" })
+                @Html.ActionLink("Delete", "Delete", "PageNews", new { @Model.id }, new { @class = "deletelinksmall" })
+                </p>
+            }
+		    <p>
+                    @Html.DisplayTextFor(modelItem => @Model.body)
+                <p class="links">@Html.ActionLink("Powrót", "Index", "Home", new { @Model.id }, new { @class = "more" })</p>
+		    </p>
+	    </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.body)
-    </div>
-    <div class="display-field">
-        @Html.DisplayTextFor(model => model.body)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.publish_date)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.publish_date)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edytuj", "Edit", new { id=Model.id }) |
-    @Html.ActionLink("Lista", "Index")
-</p>

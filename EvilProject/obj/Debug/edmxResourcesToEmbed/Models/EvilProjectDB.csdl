@@ -2,16 +2,25 @@
 <Schema Namespace="EvilProjectModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="EvilProjectEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="PageNews" EntityType="EvilProjectModel.PageNews" />
+    <EntitySet Name="TODO" EntityType="EvilProjectModel.TODO" />
   </EntityContainer>
   <EntityType Name="PageNews">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="title" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="body" Nullable="false" />
-    <Property Type="DateTime" Name="publish_date" Nullable="false" />
-    <Property Type="String" Name="type" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="project_title" Nullable="false" MaxLength="50" />
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="publish_date" Type="DateTime" Precision="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TODO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="add_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="done_date" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

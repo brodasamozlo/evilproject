@@ -14,7 +14,9 @@ C:\Projekty VS\EvilProject\EvilProject\bin\System.Web.Razor.dll
 C:\Projekty VS\EvilProject\EvilProject\bin\System.Web.WebPages.Deployment.dll
 C:\Projekty VS\EvilProject\EvilProject\bin\System.Web.WebPages.dll
 C:\Projekty VS\EvilProject\EvilProject\bin\System.Web.WebPages.Razor.dll
+C:\Projekty VS\EvilProject\EvilProject\bin\WebActivator.dll
 C:\Projekty VS\EvilProject\EvilProject\bin\WebGrease.dll
+C:\Projekty VS\EvilProject\EvilProject\bin\WebMatrix.WebData.dll
 C:\Projekty VS\EvilProject\EvilProject\bin\EntityFramework.xml
 C:\Projekty VS\EvilProject\EvilProject\bin\Newtonsoft.Json.xml
 C:\Projekty VS\EvilProject\EvilProject\bin\System.Net.Http.Formatting.xml
@@ -28,5 +30,3 @@ C:\Projekty VS\EvilProject\EvilProject\bin\System.Web.WebPages.Razor.xml
 C:\Projekty VS\EvilProject\EvilProject\obj\Debug\EvilProject.dll
 C:\Projekty VS\EvilProject\EvilProject\obj\Debug\EvilProject.pdb
 C:\Projekty VS\EvilProject\EvilProject\obj\Debug\EvilProject.csprojResolveAssemblyReference.cache
-C:\Projekty VS\EvilProject\EvilProject\bin\WebActivator.dll
-C:\Projekty VS\EvilProject\EvilProject\bin\WebMatrix.WebData.dll

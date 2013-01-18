@@ -19,7 +19,7 @@
                             @Html.ActionLink("Delete", "Delete", "TODO", new { zadanie.Id }, new { @class = "deletelinksmall" })
                             </p>
                         }
-                       <li>@zadanie.description</li>	
+                       <li>@String.Format("{0} - (dodane: {1})", zadanie.description, zadanie.add_date.ToString("yyyy-MM-dd"))</li>	
                      }
                 </ul>
             }    

@@ -11,11 +11,14 @@ namespace EvilProject.Controllers
 {
     public class BaseContro : Controller
     {
-        private EvilProjectEntities db = new EvilProjectEntities();
+        private EP_DB db = new EP_DB();
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             base.OnActionExecuted(filterContext);
+
+           
+
             var todoBD = db.TODO.ToList();
 
             ArrayList lista_projektow = new ArrayList();

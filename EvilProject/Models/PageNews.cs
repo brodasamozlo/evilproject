@@ -18,7 +18,5 @@ namespace EvilProject.Models
         public string title { get; set; }
         public string body { get; set; }
         public System.DateTime publish_date { get; set; }
-        public string type { get; set; }
-        public string project_title { get; set; }
     }
 }

@@ -15,7 +15,7 @@
     </ul>
     
     
-    System.Collections.Hashtable ToDo = ViewData["lista_todo_do_zrobienia"] as System.Collections.Hashtable;
+    System.Collections.Hashtable ToDo = ViewData["lista_todo_zrobione"] as System.Collections.Hashtable;
 
     if (ToDo != null)
     {
@@ -27,7 +27,7 @@
             {
                 foreach (EvilProject.Models.TODO zadanie in (System.Collections.ArrayList)ToDo[projekt])
                 { 
-                    <li>@String.Format("{0} - {1}", zadanie.project_name, zadanie.description)</li>	
+                    <li>@String.Format("{0} - {1} - (wykonane: {2})", zadanie.project_name, zadanie.description, zadanie.done_date.GetValueOrDefault().ToString("yyyy-MM-dd"))</li>	
                 }
             }   
             </ul> 

@@ -31,8 +31,12 @@
     </fieldset>
 }
 </section>
-<p>  @Html.ActionLink("Register", "Register") Zarejestruj</p>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+  @String.Format("{0}",ViewData["EXL"])
+    

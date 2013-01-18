@@ -9,9 +9,9 @@ using EvilProject.Models;
 
 namespace EvilProject.Controllers
 {
-    public class TODOController : Controller
+    public class TODOController : BaseContro
     {
-        private EvilProjectEntities db = new EvilProjectEntities();
+        private EP_DB db = new EP_DB();
 
         //
         // GET: /TODO/

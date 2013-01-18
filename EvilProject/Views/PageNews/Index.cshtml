@@ -20,9 +20,7 @@
         <th>
            Data publikacji
         </th>
-        <th>
-            Typ
-        </th>
+
         <th></th>
     </tr>
 
@@ -34,10 +32,7 @@
         <td>
             @String.Format("{0}", item.publish_date).Substring(0,16)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
+         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })

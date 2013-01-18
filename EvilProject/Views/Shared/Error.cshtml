@@ -9,8 +9,13 @@
     <title>Error</title>
 </head>
 <body>
-    <h2>
-        Sorry, an error occurred while processing your request.
-    </h2>
+    
+    <h2>Szczegóły wyjątku</h2>
+<p>
+        @String.Format("Controler:{0}", @Model.ControllerName); <br>
+        @String.Format("Action:{0}", @Model.ActionName);  <br>
+        @String.Format("Exception:{0}", @Model.ControllerName);<br>
+        @String.Format("ModelState:{0}", @Model.ModelState);<br>
+</p>
 </body>
 </html>

@@ -3,30 +3,45 @@
     ViewBag.Title = "Główna";
 }
 
+
+
 @{
-    
+
+    String.Format("{0}", ViewData["EX"]);
     var Model = ViewData["News"] as IEnumerable<EvilProject.Models.PageNews>;
-    foreach (var item in Model) {
-        <div class="post">
-	    <h1 class="title"><a href="#"> @Html.DisplayTextFor(modelItem => item.title)</a></h1>
-	    <p class="byline"><small>  @String.Format("{0}", item.publish_date).Substring(0,16) <a href="#">Broda Samo Zło</a></small></p>
-	    <div class="entry">
-                @if(Request.IsAuthenticated) 
-                {<p>   
-                    @Html.ActionLink("Edit", "Edit", "PageNews", new { item.id }, new { @class = "editlinksmall" })
-                    @Html.ActionLink("Delete", "Delete", "PageNews", new { item.id }, new { @class = "deletelinksmall" })
-                 </p>
-                }
-		        <p>
-                     @Html.DisplayTextFor(modelItem => item.body)
-
-		        </p>
-	        </div>
-        </div>
+    if (Model != null)
+    {
+        foreach (var item in Model) {
+            <div class="post">
+	        <h1 class="title"><a href="#"> @Html.DisplayTextFor(modelItem => item.title)</a></h1>
+	        <p class="byline"><small>  @String.Format("{0}", item.publish_date.ToString("yyyy-MM-dd HH:mm")) <a href="#">Broda Samo Zło</a></small></p>
+	        <div class="entry">
+                    @if(Request.IsAuthenticated) 
+                    {<p>   
+                        @Html.ActionLink("Edit", "Edit", "PageNews", new { item.id }, new { @class = "editlinksmall" })
+                        @Html.ActionLink("Delete", "Delete", "PageNews", new { item.id }, new { @class = "deletelinksmall" })
+                     </p>
+                    }
+		            <p>
+                        @if(item.body.Length >= 500)
+                        {
+                            @Html.DisplayTextFor(modelItem => item.body)
+                            <p class="links">@Html.ActionLink("Czytaj dalej...", "Details", "PageNews", new { item.id }, new { @class = "more" })</p>
+                        }
+                        else
+                        {
+                            @Html.DisplayTextFor(modelItem => item.body)
+                        }
+		            </p>
+	            </div>
+            </div>
     
+        }
     }
-
-    
+    else
+    {
+        String.Format("Model == null");
+    }
     
       if(Request.IsAuthenticated) 
         {<p>   
@@ -36,7 +51,7 @@
     
 }
 
-<!--<a href="~/Views/Home/Index.cshtml">~/Views/Home/Index.cshtml</a>
+<!--
 <div class="post">
 	<h1 class="title"><a href="#">Witam na mojej stronie!</a></h1>
 	<p class="byline"><small>2013-01-11 <a href="#">Broda Samo Zło</a></small></p>
@@ -80,4 +95,5 @@
 		</p>
 	</div>
 </div>
+
 -->

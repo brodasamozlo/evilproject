@@ -10,12 +10,38 @@ namespace EvilProject.Controllers
 {
     public class HomeController : BaseContro
     {
-        private EvilProjectEntities db = new EvilProjectEntities();
-
+        private EP_DB db = new EP_DB();
+        string wyj = "";
         [AllowAnonymous]
         public ActionResult Index()
         {
-            ViewData.Add("News", db.PageNews.ToList().OrderBy(m => m.publish_date));
+            try
+            {
+                ViewData.Add("EX", "przed");
+
+
+                var lista =  db.PageNews.ToList().OrderBy(m => m.publish_date);
+                if (lista != null)
+                {
+                    foreach (PageNews news in lista)
+                    {
+                        if (news.body.Length > 500)
+                            news.body = news.body.Substring(0, 500) + "...";
+                    }
+
+                    ViewData.Add("News", lista);
+                }
+               
+                ViewData["EX"] = "po";
+            }
+            catch (Exception ex)
+            {
+                wyj = ex.Message;
+            }
+            finally
+            {
+                ViewData["EX"] = wyj;
+            }
             return View();
         }
 

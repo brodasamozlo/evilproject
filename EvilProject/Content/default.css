@@ -83,34 +83,19 @@ img.right {float:right;margin:0 0 0 20px}
 #footer .link {float:right}
 #footer .copyright {float:left}
 
-a.editlinksmall
+
+.ui-button .ui-button-text
 {
-    background: url(Images/edit-small.jpg) no-repeat top left;
-     display: inline-block;
-     width: 20px;
-     height: 20px;
-     text-indent: -9999px; /* hides the link text */
+   padding: 0px 11px 0px 21px !important;
+   font-size: .72em !important;
 }
 
-a.addlinksmall
+textarea#body.htmlbody
 {
-    background: url(Images/add-small.jpg) no-repeat top left;
-     display: inline-block;
-     width: 20px;
-     height: 20px;
-     text-indent: -9999px; /* hides the link text */
+    width: 441px;
+    max-width: 441px;
+    min-height: 300px;
 }
-
-
-a.deletelinksmall
-{
-    background: url(Images/delete-small.jpg) no-repeat top left;
-     display: inline-block;
-     width: 20px;
-     height: 20px;
-     text-indent: -9999px; /* hides the link text */
-}
-
 /* Formularze */
 #editor-field
 {

@@ -1,11 +1,20 @@
 ﻿<!DOCTYPE html>
 
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>@ViewBag.Title - Evil Project</title>
 <meta name="keywords" content="" />
   @Styles.Render("~/Content/css")
+  @Styles.Render("~/Content/themes/base/css")
   @Scripts.Render("~/bundles/modernizr")
+  @Scripts.Render("~/bundles/jquery")
+  @Scripts.Render("~/bundles/jqueryui")
+  @Scripts.Render("~/Scripts/wlasne")
+
+
+  
+  @RenderSection("scripts", required: false)
 </head>
 <body>
 <div id="header">
@@ -52,7 +61,6 @@
     <div class="fclear"></div>
 
 </div>
-     @Scripts.Render("~/bundles/jquery")
-     @RenderSection("scripts", required: false)
+
 </body>
 </html>

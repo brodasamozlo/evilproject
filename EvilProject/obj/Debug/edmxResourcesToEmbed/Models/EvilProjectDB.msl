@@ -2,14 +2,23 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EvilProjectModelStoreContainer" CdmEntityContainer="EvilProjectEntities">
     <EntitySetMapping Name="PageNews">
-      <EntityTypeMapping TypeName="IsTypeOf(EvilProjectModel.PageNews)">
+      <EntityTypeMapping TypeName="EvilProjectModel.PageNews">
         <MappingFragment StoreEntitySet="PageNews">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
           <ScalarProperty Name="body" ColumnName="body" />
           <ScalarProperty Name="publish_date" ColumnName="publish_date" />
-          <ScalarProperty Name="type" ColumnName="type" />
-          <ScalarProperty Name="project_title" ColumnName="project_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TODO">
+      <EntityTypeMapping TypeName="EvilProjectModel.TODO">
+        <MappingFragment StoreEntitySet="TODO">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="add_date" ColumnName="add_date" />
+          <ScalarProperty Name="done_date" ColumnName="done_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

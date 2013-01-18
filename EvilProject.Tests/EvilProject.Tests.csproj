@@ -100,10 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\SimpleMembershipMvc3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IWebSecurityService.cs" />
-    <Compile Include="Services\WebSecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -116,6 +113,10 @@
       <Project>{7BACFB22-55AE-475A-B3C4-8A007F843877}</Project>
       <Name>EvilProject</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

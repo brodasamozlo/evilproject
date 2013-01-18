@@ -9,9 +9,10 @@ using EvilProject.Models;
 
 namespace EvilProject.Controllers
 {
+    
     public class PageNewsController : BaseContro
     {
-        private EvilProjectEntities db = new EvilProjectEntities();
+        private EP_DB db = new EP_DB();
 
         //
         // GET: /PageNews/
@@ -23,7 +24,7 @@ namespace EvilProject.Controllers
 
         //
         // GET: /PageNews/Details/5
-
+        [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
             PageNews pagenews = db.PageNews.Find(id);
@@ -51,18 +52,9 @@ namespace EvilProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                try
-                {
-                    db.PageNews.Add(pagenews);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                catch (Exception ex)
-                {
-                    string err = db.GetValidationErrors().ToString();
-                    string aa = ex.Message;
-                }
-                
+                db.PageNews.Add(pagenews);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
             return View(pagenews);
