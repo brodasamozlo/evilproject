@@ -17,12 +17,10 @@ string id = name.Replace( ".", "_" );
         $(function() {
             $("#@id").datepicker({
                 showButtonPanel: true,
-                formatDate: 'yyyy-mm-dd'
+                dateFormat: 'yy-mm-dd',
+                showAnim: 'fold'
             });
-
-		$( "#anim" ).change(function() {
-			$( "#@id" ).datepicker( "drop", "showAnim", $( this ).val() );
-		});
+          
 	});
     });
 </script>

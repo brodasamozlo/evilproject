@@ -18,7 +18,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Index()
         {
-            return View(db.TODO.ToList());
+            return View(db.TODOes.ToList().OrderByDescending(m=>m.add_date));
         }
 
         //
@@ -26,7 +26,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            TODO todo = db.TODO.Find(id);
+            TODO todo = db.TODOes.Find(id);
             if (todo == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace EvilProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TODO.Add(todo);
+                db.TODOes.Add(todo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -63,7 +63,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            TODO todo = db.TODO.Find(id);
+            TODO todo = db.TODOes.Find(id);
             if (todo == null)
             {
                 return HttpNotFound();
@@ -91,7 +91,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            TODO todo = db.TODO.Find(id);
+            TODO todo = db.TODOes.Find(id);
             if (todo == null)
             {
                 return HttpNotFound();
@@ -105,8 +105,8 @@ namespace EvilProject.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            TODO todo = db.TODO.Find(id);
-            db.TODO.Remove(todo);
+            TODO todo = db.TODOes.Find(id);
+            db.TODOes.Remove(todo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

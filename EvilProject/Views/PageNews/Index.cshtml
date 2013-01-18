@@ -6,12 +6,12 @@
 
 <div class="post">
 	<h1 class="title"><a href="#">Lista Newsów</a></h1>
-	<p class="byline"><small><a href="#"></a></small></p>
+	<p class="byline"><small>  @Html.ActionLink("Dodaj nowy", "Create", null ,  new { @class = "addlinksmall" })</small></p>
 	<div class="entry">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+  
+
 <table>
     <tr>
         <th>
@@ -33,9 +33,8 @@
             @String.Format("{0}", item.publish_date).Substring(0,16)
         </td>
          <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit",new { id=item.id },new { @class="editlinksmall" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.id },new { @class="deletelinksmall" })
         </td>
     </tr>
 }

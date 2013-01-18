@@ -4,11 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="post">
+	<h1 class="title"><a href="#">Lista TODO</a></h1>
+	<p class="byline"><small>  @Html.ActionLink("Dodaj nowy", "Create",null, new { @class = "addlinksmall" })</small></p>
+	<div class="entry">
 
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table>
     <tr>
         <th>
@@ -19,9 +21,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.add_date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.done_date)
         </th>
         <th></th>
     </tr>
@@ -38,13 +37,13 @@
             @Html.DisplayFor(modelItem => item.add_date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.done_date)
-        </td>
-        <td>
-            @Html.ActionLink("aaaaaa", "Edit", new { id=item.Id },new { @class="editlinksmall" })
-            @Html.ActionLink("bbbbbb", "Delete", new { id=item.Id },new { @class="deletelinksmall" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id },new { @class="editlinksmall" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id },new { @class="deletelinksmall" })
         </td>
     </tr>
 }
 
 </table>
+        </div>
+  </div>
+

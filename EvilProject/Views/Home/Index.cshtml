@@ -23,7 +23,7 @@
                      </p>
                     }
 		            <p>
-                        @if(item.body.Length >= 500)
+                        @if(item.body.Length >= 700)
                         {
                             @Html.DisplayTextFor(modelItem => item.body)
                             <p class="links">@Html.ActionLink("Czytaj dalej...", "Details", "PageNews", new { item.id }, new { @class = "more" })</p>
@@ -45,7 +45,7 @@
     
       if(Request.IsAuthenticated) 
         {<p>   
-            @Html.ActionLink("Create", "Create", "PageNews",null,  new { @class = "addlinksmall" })
+            @Html.ActionLink("Dodaj", "Create", "PageNews",null,  new { @class = "addlinksmall" })
          </p>
         }
     

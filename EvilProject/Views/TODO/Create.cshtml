@@ -1,16 +1,14 @@
 ﻿@model EvilProject.Models.TODO
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Dodaj";
 }
-
-<h2>Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>TODO</legend>
+        <legend>Dodaj TODO</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.project_name)
@@ -45,13 +43,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Dodaj" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Lista", "Index")
 </div>
 
 @section Scripts {

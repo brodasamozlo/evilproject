@@ -20,13 +20,13 @@ namespace EvilProject.Controllers
                 ViewData.Add("EX", "przed");
 
 
-                var lista =  db.PageNews.ToList().OrderBy(m => m.publish_date);
+                var lista =  db.PageNewses.ToList().OrderBy(m => m.publish_date);
                 if (lista != null)
                 {
                     foreach (PageNews news in lista)
                     {
-                        if (news.body.Length > 500)
-                            news.body = news.body.Substring(0, 500) + "...";
+                        if (news.body.Length > 700)
+                            news.body = news.body.Substring(0, 700) + "...";
                     }
 
                     ViewData.Add("News", lista);

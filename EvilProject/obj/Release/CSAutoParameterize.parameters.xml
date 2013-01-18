@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="EP_DB-Web.config Connection String" description="EP_DB Connection String used in web.config by the application to access the database." defaultValue="Data Source=VM_WIN7\SQLEXPRESS2012;Database=EvilProject;User ID=sa;Password=cobra666;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projekty\ VS\\EvilProject\\EvilProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EP_DB']/@connectionString" />
+  </parameter>
+</parameters>

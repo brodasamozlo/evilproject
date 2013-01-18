@@ -4,13 +4,13 @@
     ViewBag.Title = "Edycja";
 }
 
-<h2>Edit</h2>
+
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>PageNews</legend>
+        <legend>Edycja</legend>
 
         @Html.HiddenFor(model => model.id)
 
@@ -39,7 +39,7 @@
            @Html.ValidationMessageFor(model => model.body)
         </div>
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Zapisz" />
         </p>
     </fieldset>
 }

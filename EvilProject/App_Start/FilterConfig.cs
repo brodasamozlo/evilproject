@@ -10,7 +10,7 @@ namespace EvilProject
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new System.Web.Mvc.AuthorizeAttribute());
-            WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection("EvilProjectDBUsers", "Users", "id", "email", autoCreateTables: true); 
+            WebMatrix.WebData.WebSecurity.InitializeDatabaseConnection("EP_DB", "Users", "id", "email", autoCreateTables: true); 
         }
     }
 }

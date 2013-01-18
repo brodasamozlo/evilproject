@@ -19,7 +19,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Index()
         {
-            return View(db.PageNews.ToList());
+            return View(db.PageNewses.ToList().OrderByDescending(m=>m.publish_date));
         }
 
         //
@@ -27,7 +27,7 @@ namespace EvilProject.Controllers
         [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
-            PageNews pagenews = db.PageNews.Find(id);
+            PageNews pagenews = db.PageNewses.Find(id);
             if (pagenews == null)
             {
                 return HttpNotFound();
@@ -52,7 +52,7 @@ namespace EvilProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PageNews.Add(pagenews);
+                db.PageNewses.Add(pagenews);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            PageNews pagenews = db.PageNews.Find(id);
+            PageNews pagenews = db.PageNewses.Find(id);
             if (pagenews == null)
             {
                 return HttpNotFound();
@@ -94,7 +94,7 @@ namespace EvilProject.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            PageNews pagenews = db.PageNews.Find(id);
+            PageNews pagenews = db.PageNewses.Find(id);
             if (pagenews == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace EvilProject.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            PageNews pagenews = db.PageNews.Find(id);
-            db.PageNews.Remove(pagenews);
+            PageNews pagenews = db.PageNewses.Find(id);
+            db.PageNewses.Remove(pagenews);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

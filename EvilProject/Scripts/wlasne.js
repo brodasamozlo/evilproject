@@ -20,4 +20,11 @@
             },
             text: false
         });
+
+        $("a.addlinksmall").button({
+            icons: {
+                primary: "ui-icon-circle-plus"
+            },
+            text: false
+        });
     });

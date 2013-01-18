@@ -141,27 +141,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\EP_DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EP_DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EP_DB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EP_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EP_DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EP_DB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PageNews.cs">
-      <DependentUpon>EP_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TODO.cs">
-      <DependentUpon>EP_DB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DBEntities.cs" />
+    <Compile Include="Models\EvilProjectDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -254,31 +235,20 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\EP_DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EP_DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EP_DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EP_DB.edmx</DependentUpon>
-      <LastGenOutput>EP_DB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EP_DB.edmx.diagram">
-      <DependentUpon>EP_DB.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EP_DB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EP_DB.edmx</DependentUpon>
-      <LastGenOutput>EP_DB.cs</LastGenOutput>
-    </Content>
     <None Include="Properties\PublishProfiles\evilproject.pl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery-ui.unobtrusive.js" />
+    <Content Include="Scripts\jquery.ui.button.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
     <Content Include="Scripts\jquery.ui.datepicker.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.ui.effect-drop.js" />
+    <Content Include="Scripts\jquery.ui.effect-fold.js" />
+    <Content Include="Scripts\jquery.ui.effect.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />

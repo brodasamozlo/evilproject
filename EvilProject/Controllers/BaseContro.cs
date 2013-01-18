@@ -19,12 +19,10 @@ namespace EvilProject.Controllers
 
            
 
-            var todoBD = db.TODO.ToList();
+            var todoBD = db.TODOes.ToList().Where(m=>m.done_date == null).OrderBy(m=> m.project_name).OrderBy(m=> m.add_date);
 
             ArrayList lista_projektow = new ArrayList();
-
             Hashtable lista_todo_do_zrobienia = new Hashtable();
-            Hashtable lista_todo_zrobione = new Hashtable();
 
             if (todoBD != null)
             {
@@ -37,19 +35,37 @@ namespace EvilProject.Controllers
                 foreach (string nazwa_projektu in lista_projektow)
                 {
                     ArrayList lista_zadan_do_wykonania = new ArrayList();
+                    foreach (TODO todo in todoBD)
+                    {
+                        if (todo.project_name == nazwa_projektu)
+                            lista_zadan_do_wykonania.Add(todo);
+                    }
+
+                    lista_todo_do_zrobienia.Add(nazwa_projektu, lista_zadan_do_wykonania);
+                }
+            }
+
+            todoBD = db.TODOes.ToList().Where(m => m.done_date != null).OrderBy(m => m.project_name).OrderByDescending(m => m.done_date);
+            Hashtable lista_todo_zrobione = new Hashtable();
+
+            if (todoBD != null)
+            {
+                lista_projektow.Clear();
+
+                foreach (TODO todo in todoBD)
+                {
+                    if (!lista_projektow.Contains(todo.project_name))
+                        lista_projektow.Add(todo.project_name);
+                }
+
+                foreach (string nazwa_projektu in lista_projektow)
+                {
                     ArrayList lista_zadan_wykonanych = new ArrayList();
                     foreach (TODO todo in todoBD)
                     {
                         if (todo.project_name == nazwa_projektu)
-                        {
-                            if (todo.done_date.HasValue)
-                                lista_zadan_wykonanych.Add(todo);
-                            else
-                                lista_zadan_do_wykonania.Add(todo);
-                        }
+                            lista_zadan_wykonanych.Add(todo);
                     }
-
-                    lista_todo_do_zrobienia.Add(nazwa_projektu, lista_zadan_do_wykonania);
                     lista_todo_zrobione.Add(nazwa_projektu, lista_zadan_wykonanych);
                 }
             }
