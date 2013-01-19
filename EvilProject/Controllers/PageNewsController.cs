@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,37 @@ namespace EvilProject.Controllers
 
         //
         // GET: /PageNews/
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Upload(HttpPostedFileBase uploadFile, string CKEditorFuncNum, string CKEditor, string langCode)
+        {
+            string url; // url to return
+            string message =""; // message to display (optional)
+            string filePath = "";
+
+            try
+            {
+                if (((System.Web.HttpRequestWrapper)(Request)).Files[0] != null)
+                {
+
+                    filePath = Path.Combine(HttpContext.Server.MapPath("~/Content/images/upload"), Path.GetFileName(((System.Web.HttpRequestWrapper)(Request)).Files[0].FileName));
+                    ((System.Web.HttpRequestWrapper)(Request)).Files[0].SaveAs(filePath);
+                    filePath = "/Content/images/upload/" + ((System.Web.HttpRequestWrapper)(Request)).Files[0].FileName;
+                    message = "Image was saved correctly";
+                }
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+
+            url = Request.Url.GetLeftPart(UriPartial.Authority) + "/" + filePath;
+            // passing message success/failure
+            
+            
+            string output = @"<html><body><script>window.parent.CKEDITOR.tools.callFunction(" + CKEditorFuncNum + ", \"" + url + "\", \"" + message + "\");</script></body></html>";
+            return Content(output);
+            //return Redirect(Request.UrlReferrer.AbsoluteUri);
+        }
 
         public ActionResult Index()
         {

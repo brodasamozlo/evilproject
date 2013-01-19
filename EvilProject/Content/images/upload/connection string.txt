@@ -1,0 +1,1 @@
+Data Source=mssql3.webio.pl,2401;Initial Catalog=brodasamozlo_evilproject;Persist Security Info=True;User ID=brodasamozlo_dbuser;Password=Bajabongo1!

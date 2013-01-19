@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace EvilProject.Models
 {
@@ -16,6 +17,7 @@ namespace EvilProject.Models
 
         [Display(Name = "Treść")]
         [Required]
+        [AllowHtml]
         public string body { get; set; }
 
         [Display(Name = "Data publikacji")]

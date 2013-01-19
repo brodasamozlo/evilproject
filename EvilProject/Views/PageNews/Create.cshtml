@@ -5,6 +5,10 @@
 }
 
 
+<script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="~/Scripts/ckeditor/config.js"></script>
+<script type="text/javascript" src="~/Scripts/ckeditor/adapters/jquery.js"></script>
+
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
@@ -31,7 +35,8 @@
             @Html.LabelFor(model => model.body)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.body, new  { @class="htmlbody" })
+            
+        @Html.TextAreaFor(model => model.body, new { @class = "ckeditor" })
             @Html.ValidationMessageFor(model => model.body)
         </div>
         <p>
